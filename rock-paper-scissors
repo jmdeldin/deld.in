@@ -1,0 +1,46 @@
+#! /usr/bin/env ruby
+#
+# Author :: Jon-Michael Deldin <dev@jmdeldin.com>
+# Date :: 2011-08-25
+
+puts "Welcome to Rock, Paper, Scissors...the CLI game!"
+puts
+
+print "Your move: [rpsq] "
+
+choices = {r: 'rock', p: 'paper', s: 'scissors'}
+
+rules = {
+  r: {r: false, s: true, p: false},
+  p: {r: true, s: false, p: false},
+  s: {r: false, s: false, p: true},
+}
+
+usage = {
+  r: 0,
+  p: 0,
+  s: 0,
+}
+
+wins, losses = 0, 0
+loop do
+  turn = gets.chomp.downcase.strip.to_sym
+  break unless [:r, :p, :s].include?(turn)
+
+  usage[turn] += 1
+  opponent = choices.keys.sample
+
+  if rules[turn][opponent]
+    wins += 1
+    puts choices[turn] + ' beats ' + choices[opponent] + '...you win!'
+  else
+    puts choices[opponent] + ' beats ' + choices[turn] + '...you lose!'
+    losses += 1
+  end
+
+  puts "wins: %d, losses: %d, games: %d" % [wins, losses, wins + losses]
+
+  print "Your move: [rpsq] "
+end
+
+p usage
