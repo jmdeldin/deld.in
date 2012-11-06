@@ -1,5 +1,5 @@
-INDEX = File.open('index.html', 'r')          { |f| f.readlines }
-CODE  = File.open('rock-paper-scissors', 'r') { |f| f.readlines }
+INDEX = File.open('public/index.html', 'r') { |f| f.readlines }
+CODE  = File.open('bin/rock-paper-scissors', 'r') { |f| f.readlines }
 
 index = Proc.new do |env|
   if env['HTTP_USER_AGENT'] =~ /curl|wget/i
