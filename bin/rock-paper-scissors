@@ -3,23 +3,30 @@
 # Author :: Jon-Michael Deldin <dev@jmdeldin.com>
 # Date :: 2011-08-25
 
+# For Ruby < 1.9.2
+unless Array.method_defined? :sample
+  class Array
+    alias_method :sample, :choice
+  end
+end
+
 puts "Welcome to Rock, Paper, Scissors...the CLI game!"
 puts
 
 print "Your move: [rpsq] "
 
-choices = {r: 'rock', p: 'paper', s: 'scissors'}
+choices = {:r => 'rock', :p => 'paper', :s => 'scissors'}
 
 rules = {
-  r: {r: false, s: true, p: false},
-  p: {r: true, s: false, p: false},
-  s: {r: false, s: false, p: true},
+  :r => {:r => false, :s => true,  :p => false},
+  :p => {:r => true,  :s => false, :p => false},
+  :s => {:r => false, :s => false, :p => true},
 }
 
 usage = {
-  r: 0,
-  p: 0,
-  s: 0,
+  :r => 0,
+  :p => 0,
+  :s => 0,
 }
 
 wins, losses = 0, 0
