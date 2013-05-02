@@ -1,0 +1,8 @@
+permalink: pretty
+markdown:  rdiscount
+server_port: 5000
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - Rakefile

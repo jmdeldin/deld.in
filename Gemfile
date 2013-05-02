@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'foreman'
-gem 'thin'
+gem 'jekyll'
+gem 'rake'
+gem 'rdiscount'
 
-group :development do
-  gem 'shotgun'
-end
+gem 'sass'
+gem 'rb-inotify', '~> 0.8.8'
