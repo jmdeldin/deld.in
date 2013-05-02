@@ -1,0 +1,204 @@
+@import 'grid';
+
+$base-fonts: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$breakingPoint: 600px;
+$linkColor: #c0392b;
+$linkHover: #e74c3c;
+
+//
+// base CSS
+//
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background: url(img/subtle_dots.png) repeat;
+}
+
+body {
+    @media (min-width: 900px) {
+        width: 850px;
+    }
+    border-bottom: 3px solid #eee;
+    background: rgba(255, 255, 255, 1);
+    color: #333;
+    font: 16px/1 'SourceSansPro-Regular', $base-fonts;
+    margin: 0 auto;
+    box-sizing: content-box;
+}
+
+.wrap {
+    padding: 0 $gutters/2;
+}
+
+//
+// headers
+//
+h1 {
+    font: 2.95em/1 'SourceSansPro-Bold', $base-fonts;
+    text-shadow: #fff 0px 0px 1px;
+}
+
+h2 {
+    font: 1.6em/1 'SourceSansPro-Light', $base-fonts;
+}
+
+h3 {
+    font-size: 1.3em;
+    font-weight: normal;
+    margin: 1em 0 0;
+}
+
+h4 {
+    color: #666;
+    font-size: 1em;
+    font-weight: normal;
+    margin: 1em 0 0;
+    text-transform: uppercase;
+}
+
+a {
+    color: $linkColor;
+
+    &:hover {
+        color: $linkHover;
+        text-decoration: none;
+    }
+}
+
+code {
+    color: #900;
+}
+
+p, li {
+    line-height: 1.3em;
+}
+
+p+p {
+    text-indent: $gutters;
+}
+
+dd, li li {
+    margin-left: 1.25em;
+}
+
+dd {
+    margin-bottom: 0.5em;
+}
+
+//
+// banner
+//
+header[role=banner] {
+    @extend %grid;
+    @media (min-width: 900px) {
+        height: 73px;
+        overflow: hidden;
+    }
+
+    line-height: 1;
+    margin-bottom: 1em;
+
+    #logo {
+        @include grid-col;
+        @media (min-width: $breakingPoint) {
+            @include grid-col("1/2");
+        }
+
+        a {
+            color: #000;
+            text-decoration: none;
+
+            &:hover {
+                color: $linkHover !important;
+            }
+        }
+
+        #tagline {
+            @extend h2;
+            font-size: 1.4em;
+            color: #666;
+        }
+    }
+
+    nav {
+        @include grid-col;
+        @media (min-width: $breakingPoint) {
+            @include grid-col("1/2");
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            @include grid-col;
+            @media (min-width: $breakingPoint) {
+                @include grid-col("2/6");
+            }
+
+            background: $linkColor;
+            color: #fff;
+            font-size: 1.125em;
+            padding: 45px 0 10px;
+            text-align: left;
+
+
+            &:hover {
+                background: $linkHover;
+            }
+        }
+    }
+}
+
+//
+// main content
+//
+main {
+    @extend %grid;
+}
+
+article {
+    @include grid-col;
+    @media (min-width: $breakingPoint) {
+        @include grid-col("3/4");
+    }
+}
+
+aside {
+    @include grid-col;
+    @media (min-width: $breakingPoint) {
+        @include grid-col("1/4");
+    }
+
+    dd {
+        font-size: 0.8em;
+    }
+}
+
+//
+// footer
+//
+footer {
+    @extend %grid;
+
+    margin-top: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    font-size: 0.8em;
+
+    p+p {
+        text-indent: 0;
+    }
+    article {
+        font-size: 1em;
+    }
+}
+
+.meta {
+    color: #666;
+    font-size: 0.8em;
+}

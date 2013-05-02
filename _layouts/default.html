@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link href="/css/screen.css" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Bitter"
+          rel="stylesheet" type="text/css">
+    <title>{{ page.title || "Jon-Michael Deldin" }}</title>
+  </head>
+  <body>
+    <div class="wrap">
+      <header role="banner">
+        <div id="logo">
+          <a href="/" >
+            <h1>Jon-Michael Deldin</h1>
+            <p id="tagline">Master&#8217;s in Computer Science Portfolio</p>
+          </a>
+        </div>
+
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/projects">Projects</a></li>
+            <li><a href="/cv">CV</a></li>
+          </ul>
+        </nav>
+      </header>
+    </div>
+
+    <div class="wrap">
+      <main role="main">
+        <article>
+          {{ content }}
+        </article>
+
+        <aside>
+          <h2>Projects</h2>
+          <dl>
+            {% for page in site.pages %}
+              {% if page.summary %}
+                <dt><a href="{{ page.url }}">{{ page.title }}</a></dt>
+                <dd>{{ page.summary }}</dd>
+              {% endif %}
+            {% endfor %}
+          </dl>
+        </aside>
+      </main>
+    </div>
+
+    <div class="wrap">
+      <footer>
+        <article>
+          <br><br>
+          <p>&copy;2013 Jon-Michael Deldin.</p>
+          <p>A portfolio submitted in partial fulfillment of the
+            requirements for the degree of Master of Science in Computer
+            Science to the University of Montana-Missoula.</p>
+        </article>
+
+        <aside>
+          <h4>Elsewhere</h4>
+          <ul>
+            <li><a href="http://www.jmdeldin.com">Homepage</a></li>
+            <li><a href="http://linkedin.com/in/jmdeldin">LinkedIn</a></li>
+            <li><a href="https://github.com/jmdeldin">GitHub</a>
+          </ul>
+        </aside>
+      </footer>
+    </div>
+
+  </body>
+</html>
