@@ -15,10 +15,10 @@ end
 
 desc 'Launch the Jekyll server'
 task :server => :clobber do
-  sh 'jekyll --server --auto'
+  sh 'jekyll serve --watch --port 5000'
 end
 
 desc 'Build the site'
 task :build => [:compile_css, :clobber] do
-  sh 'jekyll'
+  sh 'jekyll build'
 end
