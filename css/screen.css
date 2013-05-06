@@ -1,0 +1,259 @@
+/**
+ * Columns in SSGS rely on `box-sizing: border-box;` in order to work properly.
+ * It is considered good practice to just apply the 'correct' box-sizing to all
+ * elements, even by people like Paul Irish.
+ * (see: http://paulirish.com/2012/box-sizing-border-box-ftw/)
+ *
+ * Without Compass:
+ -webkit-box-sizing: border-box;
+ -moz-box-sizing: border-box;
+ box-sizing: border-box;
+ *
+ * With Compass:
+ @import "compass/css3/box-sizing";
+ @include box-sizing(border-box);
+ */
+* {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/**
+ * $gutters is the only variable you'll ever need to set yourself. Use whatever
+ * kind of value you want, be it px, em, rem or even percentages (allthough that would)
+ * really miss the whole point of SSGS.
+ */
+/**
+ * SSGS uses floats to do the heavy lifting with the layout so there needs to be a
+ * clearfix. The one that's worked best for me is Nicolas Gallagher's `Micro Clearfix`
+ * hack. It is included below. If you already have a clearfix in place, feel free to
+ * remove it, but be sure to change the `@extend` rule inside `.grid`.
+ * (see: http://nicolasgallagher.com/micro-clearfix-hack/)
+ */
+header[role=banner], main, footer {
+  *zoom: 1; }
+  header[role=banner]::before, main::before, footer::before, header[role=banner]::after, main::after, footer::after {
+    content: " ";
+    display: table; }
+  header[role=banner]::after, main::after, footer::after {
+    clear: both; }
+
+/**
+ * With SSGS, you define grid columns in your CSS using mixins. It's quite a great
+ * thing as it removes the dependency on all those classes in your HTML.
+ *
+ * Example:
+ .item {
+ @include grid-col("one half"); // Equivalent to `grid-col("1/2")`.
+ }
+ *
+ * You could also change SSGS by mapping the mixins to classes.
+ *
+ * Example:
+ .one-half {
+ @include grid-col("one half");
+ }
+ *
+ * Still, it's prefferable to work with the mixins directly in your CSS as it allows
+ * easy changes of the column count to enable a fully responsive grid. The following
+ * example shows a typical mobile-first grid (i.e. 1-2-3-4 columns).
+ *
+ * Example:
+ .item {
+ @include grid-col;
+
+@media (min-width: 30em) {
+@include grid-col("one half");
+}
+
+@media (min-width: 40em) {
+@include grid-col("one third");
+}
+
+@media (min-width: 50em) {
+@include grid-col("one quarter");
+}
+}
+*/
+/**
+ * One of the most cumbersome things with traditional grid system is their use of
+ * classes like `.end`, `.omega` or the like in order to remove the gutter at the start
+ * or the end of a row. With SSGS this is not necessary anymore, yay! Allthough you don't
+ * need to add the .grid class to your HTML, I think it's the preferrable way, as it makes
+ * the basic structure much more easily visible. However, feel free to just @extend the
+ * class from within your SCSS.
+ *
+ * Example:
+ <div class="grid">
+ <div class="item"></div>
+ <div class="item"></div>
+ </div>
+
+.item {
+@include grid-col("one half");
+}
+*
+* Note: Don't apply things like backgrounds or borders to the columns themselves.
+* It's neither good practice (use grids only for layout, not for styling) nor will
+* it work with SGSS. Use an element inside the column to do those things.
+*/
+header[role=banner], main, footer {
+  margin-left: -1.5em; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+html {
+  background: url(img/subtle_dots.png) repeat; }
+
+body {
+  border-bottom: 3px solid #eee;
+  background: white;
+  color: #333;
+  font: 16px/1 "SourceSansPro-Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0 auto;
+  box-sizing: content-box; }
+  @media (min-width: 900px) {
+    body {
+      width: 850px; } }
+
+.wrap {
+  padding: 0 0.75em; }
+
+h1 {
+  font: 2.95em/1 "SourceSansPro-Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-shadow: #fff 0px 0px 1px; }
+
+h2, header[role=banner] #logo #tagline {
+  font: 1.6em/1 "SourceSansPro-Light", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+h3 {
+  font-size: 1.3em;
+  font-weight: normal;
+  margin: 1em 0 0; }
+
+h4 {
+  color: #666;
+  font-size: 1em;
+  font-weight: normal;
+  margin: 1em 0 0;
+  text-transform: uppercase; }
+
+a {
+  color: #c0392b; }
+  a:hover {
+    color: #e74c3c;
+    text-decoration: none; }
+
+code {
+  color: #900; }
+
+p, li {
+  line-height: 1.3em; }
+
+p + p {
+  text-indent: 1.5em; }
+
+dd, li li {
+  margin-left: 1.25em; }
+
+dd {
+  margin-bottom: 0.5em; }
+
+header[role=banner] {
+  line-height: 1;
+  margin-bottom: 1em; }
+  @media (min-width: 900px) {
+    header[role=banner] {
+      height: 73px;
+      overflow: hidden; } }
+  header[role=banner] #logo {
+    display: block;
+    float: left;
+    padding-left: 1.5em;
+    width: 100%; }
+    @media (min-width: 600px) {
+      header[role=banner] #logo {
+        display: block;
+        float: left;
+        padding-left: 1.5em;
+        width: 50%; } }
+    header[role=banner] #logo a {
+      color: #000;
+      text-decoration: none; }
+      header[role=banner] #logo a:hover {
+        color: #e74c3c !important; }
+    header[role=banner] #logo #tagline {
+      font-size: 1.4em;
+      color: #666; }
+  header[role=banner] nav {
+    display: block;
+    float: left;
+    padding-left: 1.5em;
+    width: 100%; }
+    @media (min-width: 600px) {
+      header[role=banner] nav {
+        display: block;
+        float: left;
+        padding-left: 1.5em;
+        width: 50%; } }
+    header[role=banner] nav li {
+      list-style: none; }
+    header[role=banner] nav a {
+      display: block;
+      float: left;
+      padding-left: 1.5em;
+      width: 100%;
+      background: #c0392b;
+      color: #fff;
+      font-size: 1.125em;
+      padding: 45px 0 10px;
+      text-align: left; }
+      @media (min-width: 600px) {
+        header[role=banner] nav a {
+          display: block;
+          float: left;
+          padding-left: 1.5em;
+          width: 33.333%; } }
+      header[role=banner] nav a:hover {
+        background: #e74c3c; }
+
+article {
+  display: block;
+  float: left;
+  padding-left: 1.5em;
+  width: 100%; }
+  @media (min-width: 600px) {
+    article {
+      display: block;
+      float: left;
+      padding-left: 1.5em;
+      width: 75%; } }
+
+aside {
+  display: block;
+  float: left;
+  padding-left: 1.5em;
+  width: 100%; }
+  @media (min-width: 600px) {
+    aside {
+      display: block;
+      float: left;
+      padding-left: 1.5em;
+      width: 25%; } }
+  aside dd {
+    font-size: 0.8em; }
+
+footer {
+  margin-top: 1em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  font-size: 0.8em; }
+  footer p + p {
+    text-indent: 0; }
+  footer article {
+    font-size: 1em; }
+
+.meta {
+  color: #666;
+  font-size: 0.8em; }
