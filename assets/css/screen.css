@@ -104,7 +104,7 @@ header[role=banner], main, footer {
   padding: 0; }
 
 html {
-  background: url(img/subtle_dots.png) repeat; }
+  background: url(../img/subtle_dots.png) repeat; }
 
 body {
   border-bottom: 3px solid #eee;
