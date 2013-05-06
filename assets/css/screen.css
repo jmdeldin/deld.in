@@ -257,3 +257,9 @@ footer {
 .meta {
   color: #666;
   font-size: 0.8em; }
+
+figure {
+  margin: 0 0 1em; }
+
+figcaption {
+  font-size: 0.8em; }

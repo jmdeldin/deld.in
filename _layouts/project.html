@@ -5,4 +5,19 @@ layout: default
 <h2>{{ page.title }}</h2>
 <p class="meta">{{ page.course }}, {{ page.date }}</p>
 
+{% if page.images %}
+  {% for img in page.images %}
+    {% capture img_url %}
+      {{site.baseurl }}assets/img/{{ img['filename']}}
+    {% endcapture %}
+    <figure>
+      <a href="{{ img_url }}">
+      <img width="100%" alt="{{ img['title'] }}"
+           src="{{ img_url }}">
+      </a>
+      <figcaption>{{ img['caption'] | smart }}</figcaption>
+    </figure>
+  {% endfor %}
+{% endif %}
+
 {{ content }}
