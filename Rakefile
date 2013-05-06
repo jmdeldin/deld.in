@@ -1,7 +1,7 @@
 require 'rake/clean'
 
 CLOBBER.include('_site')
-SASS_PATHS = 'css/screen.scss:css/screen.css'
+SASS_PATHS = 'assets/css/scss/screen.scss:assets/css/screen.css'
 
 desc 'Auto-compile SCSS'
 task :watch do
