@@ -12,8 +12,7 @@ layout: default
     {% endcapture %}
     <figure>
       <a href="{{ img_url }}">
-      <img width="100%" alt="{{ img['title'] }}"
-           src="{{ img_url }}">
+        <img alt="{{ img['title'] }}" src="{{ img_url }}">
       </a>
       <figcaption>{{ img['caption'] | smart }}</figcaption>
     </figure>

@@ -212,6 +212,11 @@ footer {
 //
 figure {
     margin: 0 0 1em;
+
+    img {
+        max-width: 100%;
+        display: block;
+    }
 }
 
 figcaption {

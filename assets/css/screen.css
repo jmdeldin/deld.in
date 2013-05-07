@@ -264,6 +264,9 @@ footer {
 
 figure {
   margin: 0 0 1em; }
+  figure img {
+    max-width: 100%;
+    display: block; }
 
 figcaption {
   font-size: 0.8em; }
