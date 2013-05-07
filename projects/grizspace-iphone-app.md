@@ -20,8 +20,8 @@ images:
   filename: 'grizspace.schedule.png'
   caption: Screenshot of the user's schedule view.
 
-- title: Screenshot of the website's controls.
-  filename: 'grizspace.schedule.png'
+- title: Screenshot of the detailed view.
+  filename: 'grizspace.detail.png'
   caption:
 
     Screenshot of a course's detailed view. From this screen, users
