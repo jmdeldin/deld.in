@@ -56,7 +56,7 @@ For me, Simulation was the hardest class I've taken. I have a very weak
 physics and calculus background, so I'm most proud that I could
 understand and implement a potential educational tool.
 
-### Learning Outcomes
+### What did I learn from the project?
 
 - Learning how to use a finite element solver (and tackling the daunting
   task of not knowing where to begin)

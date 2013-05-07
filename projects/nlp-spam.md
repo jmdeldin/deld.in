@@ -70,7 +70,7 @@ creating tighter feedback loops:
   speed.
 
 
-### Learning Outcomes
+### What did I learn from the project?
 
 - Valuable experience in evaluating **all** assumptions. I wrote
   algorithms and implemented them to test every parameter for each
