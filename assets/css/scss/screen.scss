@@ -1,6 +1,6 @@
 @import 'grid';
 
-$base-fonts: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$base-fonts: Helvetica, Arial, sans-serif;
 $breakingPoint: 600px;
 $linkColor: #c0392b;
 $linkHover: #e74c3c;
@@ -24,10 +24,10 @@ body {
     }
     border-bottom: 3px solid #eee;
     background: rgba(255, 255, 255, 1);
-    color: #333;
-    font: 16px/1 'SourceSansPro-Regular', $base-fonts;
-    margin: 0 auto;
     box-sizing: content-box;
+    color: #333;
+    font: 16px/1 source-sans-pro, 'Source Sans Pro', $base-fonts;
+    margin: 0 auto;
 }
 
 .wrap {
@@ -38,12 +38,16 @@ body {
 // headers
 //
 h1 {
-    font: 2.95em/1 'SourceSansPro-Bold', $base-fonts;
+    font-size: 2.95em;
+    font-weight: 700;
+    line-height: 1;
     text-shadow: #fff 0px 0px 1px;
 }
 
 h2 {
-    font: 1.6em/1 'SourceSansPro-Light', $base-fonts;
+    font-size: 1.6em;
+    font-weight: 300;
+    line-height: 1;
 }
 
 h3 {
