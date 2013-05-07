@@ -2,6 +2,5 @@
 layout: default
 title:  "Jon-Michael Deldin: Graduate Computer Science Portfolio"
 ---
-<h2>Portfolio</h2>
 
-<p>TODO: Write this section.</p>
+## Portfolio
