@@ -164,6 +164,9 @@ dd, li li {
 dd {
   margin-bottom: 0.5em; }
 
+article ol, article ul {
+  margin-left: 1.25em; }
+
 header[role=banner] {
   line-height: 1;
   margin-bottom: 1em; }
