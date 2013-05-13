@@ -20,3 +20,16 @@ layout: default
 {% endif %}
 
 {{ content }}
+
+{% if page.papers %}
+  <h3>Papers</h3>
+  <ul>
+  {% for paper in page.papers%}
+    <li>
+      <a href="{{ site.baseurl }}assets/papers/{{ paper['filename'] }}">
+        {{ paper['title'] }}
+      </a>
+    </li>
+  {% endfor %}
+  </ul>
+{% endif %}

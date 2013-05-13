@@ -6,6 +6,13 @@ summary:
   structures.
 course: Introduction to Bioinformatics, Machine Learning, RNA Structure Seminar
 date: Dec. 2010&#8211;May 2011
+papers:
+  - title: Report for Intro. to Bioinformatics
+    filename: rnasec.bioinformatics.pdf
+  - title: Presentation for RNA Structure and Function Seminar
+    filename: rnasec.slides.pdf
+  - title: Report for Machine Learning
+    filename: rnasec.machine-learning.pdf
 images:
 ---
 
