@@ -6,6 +6,10 @@ summary:
     boundary conditions and other parameters on hyperelastic materials.
 course: Computer Simulation and Modeling
 date: May 2012
+papers:
+  - title: Project report for Computer Simulation & Modeling
+    filename: hyperelasticity.report.pdf
+code: https://github.com/jmdeldin/interactive-hyperelasticity
 images:
 - title: Screenshot of the website (top).
   caption:
