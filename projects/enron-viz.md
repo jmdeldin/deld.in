@@ -4,8 +4,11 @@ title:  Enron Email Corpus Visualization
 summary: Investigating everyone's favorite email corpus.
 course: Data Visualization
 date: November 2011
-images:
+papers:
+  - title: Project report for Data Visualization
+    filename: 'enron.report.pdf'
 
+images:
 - title: Thumbnail of a poster investigating the email trends of Jeff Dasovich.
   filename: 'enron.dasovich.png'
   caption:
