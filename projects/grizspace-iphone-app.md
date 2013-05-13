@@ -5,6 +5,10 @@ summary:
     An iPhone application for scheduling and finding classes on UM's campus.
 course: Human-Computer Interaction, Game and Mobile Development
 date: May 2012
+code: https://github.com/GrizSpace/GrizSpace
+papers:
+  - title: Evaluating GrizSpace without Users
+    filename: grizspace.no-users.pdf
 images:
 
 - title: Screenshot of the map view.
