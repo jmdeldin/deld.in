@@ -4,6 +4,7 @@ title:  Enron Email Corpus Visualization
 summary: Investigating everyone's favorite email corpus.
 course: Data Visualization
 date: November 2011
+code: https://github.com/jmdeldin/enron-viz
 papers:
   - title: Project report for Data Visualization
     filename: 'enron.report.pdf'
