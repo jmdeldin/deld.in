@@ -33,3 +33,8 @@ layout: default
   {% endfor %}
   </ul>
 {% endif %}
+
+{% if page.code%}
+  <h3>Code</h3>
+  <p><a href="{{ page.code }}">View source code</a></p>
+{% endif %}

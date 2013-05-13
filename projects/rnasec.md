@@ -13,6 +13,7 @@ papers:
     filename: rnasec.slides.pdf
   - title: Report for Machine Learning
     filename: rnasec.machine-learning.pdf
+code: https://github.com/jmdeldin/rna_sec
 images:
 ---
 
