@@ -4,7 +4,7 @@ title:  NLP Spam Classifcation of a Social Network
 summary: Applying natural language processing techniques to classify spam.
 course: Artificial Intelligence
 date: December 2012
-code: https://github.com/jmdeldin/cross_validation
+code: https://github.com/jmdeldin/nlp-spam
 papers:
   - title: Final report for Artificial Intelligence
     filename: 'nlp.report.pdf'
