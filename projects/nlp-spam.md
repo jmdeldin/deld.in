@@ -5,16 +5,25 @@ summary: Applying natural language processing techniques to classify spam.
 course: Artificial Intelligence
 date: December 2012
 code: https://github.com/jmdeldin/cross_validation
+papers:
+  - title: Final report for Artificial Intelligence
+    filename: 'nlp.report.pdf'
 images:
-- title: Screenshot of a spammer's profile.
-  caption:
+  - title: Screenshot of a spammer's profile.
+    filename: 'nlp.spam-profile.png'
+    caption:
 
-    This screenshot of a spammer's profile on AskNature shows the
-    "about" text the spammer enters, along with the first name ("hk"),
-    last name ("stayin"), username ("stayin"), and the spammer's
-    address.
+      This screenshot of a spammer's profile on AskNature shows the "about" text
+      the spammer enters, along with the first name ("hk"), last name
+      ("stayin"), username ("stayin"), and the spammer's address.
 
-  filename: 'nlp.spam-profile.png'
+  - title: Screenshot of htop
+    filename: 'nlp.htop.png'
+    caption:
+
+      'Screenshot of `htop` showing my cross-validation routing utilizing all
+      four cores.'
+
 ---
 
 ### Background
@@ -59,7 +68,7 @@ Although 6k samples isn't enormous by any means, normalizing and
 evaluating text is very CPU-intensive. I am most proud of my work in
 creating tighter feedback loops:
 
-- I modified the open-source naive Bayes library for faster text hashing
+- I modified an open-source naive Bayes library for faster text hashing
   and string conversion, resulting in a 3-6 s per classification. This
   really adds up when cross-validating multiple models.
 - I fully-parallelized my cross-validation routine to use up to six
@@ -68,7 +77,8 @@ creating tighter feedback loops:
   files to disk.
 - All of the evaluation scripts work with serialized data samples for
   speed.
-
+- I wrote a few scripts that enabled me to inspect the state of my
+  serialized models and training data, enabling easier debugging.
 
 ### What did I learn from the project?
 
