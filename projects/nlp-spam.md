@@ -41,12 +41,12 @@ One social network suffering from spam is
 database of biomimetic solutions. Members can create a profile, comment
 on articles, create and read articles, and participate in forums.
 Unfortunately, spammers take advantage of the open user registration and
-inundate the site with illegitimate accounts, such as the one shown in
-Fig.~\ref{fig:spam-profile}. Since the site opened in November 2008, the
-staff detected nearly 20,000 spam profiles, in contrast to almost 9,000
-legitimate profiles (as of November 28, 2012). The site has coped with a
-few heuristics tools that check for links and HTML, but they are run
-only to detect profiles -- a human still inspects and bans users.
+inundate the site with illegitimate accounts, such as the one shown
+above. Since the site opened in November 2008, the staff detected nearly
+20,000 spam profiles, in contrast to almost 9,000 legitimate profiles
+(as of November 28, 2012). The site has coped with a few heuristics
+tools that check for links and HTML, but they are run only to detect
+profiles -- a human still inspects and bans users.
 
 ### What was the assignment?
 
