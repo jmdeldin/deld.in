@@ -6,17 +6,17 @@ layout: default
 <p class="meta">{{ page.course }} &middot; {{ page.date }}</p>
 
 {% if page.images %}
+  <div class="figures">
   {% for img in page.images %}
-    {% capture img_url %}
-      {{site.baseurl }}assets/img/{{ img['filename']}}
-    {% endcapture %}
+    {% capture img_url %}{{site.baseurl }}assets/img/{{ img['filename']}}{% endcapture %}
     <figure>
-      <a href="{{ img_url }}">
+      <a rel="figures" href="{{ img_url }}" title="{{ img['caption'] }}">
         <img alt="{{ img['title'] }}" src="{{ img_url }}">
       </a>
       <figcaption>{{ img['caption'] | smart }}</figcaption>
     </figure>
   {% endfor %}
+  </div>
 {% endif %}
 
 {{ content }}

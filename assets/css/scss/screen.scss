@@ -210,8 +210,17 @@ footer {
 //
 // figures
 //
+
+.figures {
+    @extend %grid;
+    margin-top: 1.5em;
+}
+
 figure {
-    margin: 0 0 1em;
+    @include grid-col;
+    @media (min-width: $breakingPoint) {
+        @include grid-col("1/3");
+    }
 
     img {
         max-width: 100%;
@@ -220,5 +229,20 @@ figure {
 }
 
 figcaption {
+    font-size: 0.8em;
+}
+
+//
+// colorbox
+//
+#cboxCurrent {
+    display: none;
+}
+
+#cboxTitle {
+    width: 80%;
+    left: 10%;
+    text-align: left;
+    bottom: 0;
     font-size: 0.8em;
 }

@@ -29,12 +29,12 @@
  * remove it, but be sure to change the `@extend` rule inside `.grid`.
  * (see: http://nicolasgallagher.com/micro-clearfix-hack/)
  */
-header[role=banner], main, footer {
+header[role=banner], main, footer, .figures {
   *zoom: 1; }
-  header[role=banner]::before, main::before, footer::before, header[role=banner]::after, main::after, footer::after {
+  header[role=banner]::before, main::before, footer::before, .figures::before, header[role=banner]::after, main::after, footer::after, .figures::after {
     content: " ";
     display: table; }
-  header[role=banner]::after, main::after, footer::after {
+  header[role=banner]::after, main::after, footer::after, .figures::after {
     clear: both; }
 
 /**
@@ -96,7 +96,7 @@ header[role=banner], main, footer {
 * It's neither good practice (use grids only for layout, not for styling) nor will
 * it work with SGSS. Use an element inside the column to do those things.
 */
-header[role=banner], main, footer {
+header[role=banner], main, footer, .figures {
   margin-left: -1.5em; }
 
 * {
@@ -262,11 +262,33 @@ footer {
   color: #666;
   font-size: 0.8em; }
 
+.figures {
+  margin-top: 1.5em; }
+
 figure {
-  margin: 0 0 1em; }
+  display: block;
+  float: left;
+  padding-left: 1.5em;
+  width: 100%; }
+  @media (min-width: 600px) {
+    figure {
+      display: block;
+      float: left;
+      padding-left: 1.5em;
+      width: 33.333%; } }
   figure img {
     max-width: 100%;
     display: block; }
 
 figcaption {
+  font-size: 0.8em; }
+
+#cboxCurrent {
+  display: none; }
+
+#cboxTitle {
+  width: 80%;
+  left: 10%;
+  text-align: left;
+  bottom: 0;
   font-size: 0.8em; }
